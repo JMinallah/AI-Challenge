@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Learning App - Auth</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Account access</p>
+        <h1>Sign in or create an account.</h1>
+        <p>
+          This screen will connect to Supabase auth next, with email/password and Google sign-in.
+        </p>
+      </header>
+
+      <section class="grid" id="register">
+        <article class="card">
+          <h2>Sign in</h2>
+          <p>Use an existing account to continue your lessons and progress.</p>
+          <form class="stack" autocomplete="on">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="dad@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" placeholder="••••••••" />
+            </label>
+            <button class="button button--primary" type="button">Sign in</button>
+            <button class="button button--secondary" type="button">Continue with Google</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Create account</h2>
+          <p>Set up a new learner profile for Dad or another future user.</p>
+          <form class="stack" autocomplete="on">
+            <label>
+              Full name
+              <input type="text" name="fullName" placeholder="Dad's name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="registerEmail" placeholder="dad@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="registerPassword" placeholder="Create a password" />
+            </label>
+            <button class="button button--primary" type="button">Create account</button>
+          </form>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="assets/js/auth.js"></script>
+  </body>
+</html>
