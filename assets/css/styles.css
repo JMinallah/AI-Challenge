@@ -47,7 +47,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 8px 0 20px;
+  padding: 16px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
 .brand {
@@ -169,7 +171,7 @@ main {
 .metric-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 
 .metric-box {
@@ -984,4 +986,29 @@ p {
   .sidebar-nav::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Upgraded Nav Styles */
+.nav-links {
+  background: var(--surface);
+  padding: 6px 6px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.nav-links a {
+  padding: 8px 16px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  background: var(--surface-solid);
+  color: var(--ink);
+}
+
+.nav-links a[aria-current="page"] {
+  background: var(--ink);
+  color: white;
 }

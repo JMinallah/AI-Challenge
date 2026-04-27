@@ -16,7 +16,7 @@ async function redirectIfAlreadyLoggedIn() {
 	} = await supabase.auth.getSession();
 
 	if (session?.user) {
-		window.location.href = 'lessons.html';
+		window.location.href = 'courses.html';
 	}
 }
 
@@ -36,7 +36,7 @@ async function handleSignIn(event) {
 		return;
 	}
 
-	window.location.href = 'lessons.html';
+	window.location.href = 'courses.html';
 }
 
 async function handleSignUp(event) {
@@ -54,7 +54,7 @@ async function handleSignUp(event) {
 		password,
 		options: {
 			data: { full_name: fullName },
-			emailRedirectTo: `${window.location.origin}/lessons.html`
+			emailRedirectTo: `${window.location.origin}/courses.html`
 		}
 	});
 
@@ -74,7 +74,7 @@ async function handleGoogleSignIn() {
 	const { error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
 		options: {
-			redirectTo: `${window.location.origin}/lessons.html`
+			redirectTo: `${window.location.origin}/courses.html`
 		}
 	});
 

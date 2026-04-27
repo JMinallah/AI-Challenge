@@ -44,7 +44,7 @@ function renderLessonRow(lesson, status) {
 		return `
 			<article class="lesson-row lesson-row--locked" aria-disabled="true">
 				<div>
-					<p class="lesson-day">Day ${lesson.day}</p>
+					<p class="lesson-day">Week ${lesson.week || 1} • Day ${lesson.day}</p>
 					<h2>${lesson.title}</h2>
 					<p class="lesson-meta">Tool: ${lesson.tool || '-'} • 15 min</p>
 				</div>
@@ -56,7 +56,7 @@ function renderLessonRow(lesson, status) {
 	return `
 		<a class="lesson-row" href="lesson.html?lesson=${lesson.id}">
 			<div>
-				<p class="lesson-day">Day ${lesson.day}</p>
+				<p class="lesson-day">Week ${lesson.week || 1} • Day ${lesson.day}</p>
 				<h2>${lesson.title}</h2>
 				<p class="lesson-meta">Tool: ${lesson.tool || '-'} • 15 min</p>
 			</div>
@@ -114,7 +114,7 @@ async function initLessonsPage() {
 
 	if (nextLessonEl) {
 		const next = globalLessonsWithUnlock.find((lesson) => lesson.unlocked && globalProgressMap.get(lesson.id) !== 'completed');
-		nextLessonEl.textContent = next ? `Day ${next.day}` : 'All done';
+		nextLessonEl.textContent = next ? `Week ${next.week || 1}, Day ${next.day}` : 'All done';
 	}
 
 	if (lessonsStateEl) {

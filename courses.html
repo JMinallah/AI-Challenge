@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Stepsy</title>
+    <!-- Use basic styles to fit with theme -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script type="module" src="assets/js/courses.js" defer></script>
+    <style>
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
+      }
+      .course-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: all 0.2s ease;
+      }
+      .course-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-color: var(--accent);
+      }
+      .course-card h2 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      .course-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        flex: 1;
+      }
+      .course-meta {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .course-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+      .pill {
+        background: var(--surface-solid);
+        padding: 4px 10px;
+        border-radius: 100px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-nav">
+        <a class="brand" href="index.html">Stepsy</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="courses.html" aria-current="page">Dashboard</a>
+          <a href="settings.html">Settings</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </header>
+
+      <main class="site-main site-main--app">
+        <section class="page-intro">
+          <p class="eyebrow">Your Dashboard</p>
+          <h1>Available Courses</h1>
+          <p class="section-copy">Select a learning path below to continue your progress.</p>
+        </section>
+
+        <div class="course-grid">
+          <!-- Active Course -->
+          <a href="lessons.html" class="course-card">
+            <span class="course-meta">Fundamentals</span>
+            <h2>AI Challenge</h2>
+            <p>Master the basics of AI tools, prompting, and workflows through daily guided practice.</p>
+            <div class="course-footer">
+              <span class="pill">20 Lessons</span>
+              <span style="font-weight: 600; color: var(--accent);">Continue &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Coming Soon -->
+          <div class="course-card" style="opacity: 0.6; cursor: not-allowed; pointer-events: none;">
+            <span class="course-meta" style="color: var(--muted);">Advanced</span>
+            <h2>Automation Pipelines</h2>
+            <p>Connect your tools using Zapier, Make, and local workflows for autonomous operations.</p>
+            <div class="course-footer">
+              <span class="pill">Coming Soon</span>
+              <span style="font-weight: 600; color: var(--muted);">Locked</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
