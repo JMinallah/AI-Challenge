@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stepsy - Register</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-nav">
+        <a class="brand" href="index.html">Stepsy</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <main class="site-main auth-page">
+        <section class="auth-panel auth-panel--center">
+          <p class="eyebrow">Create a New account</p>
+          <form class="stack" data-form="sign-up" autocomplete="on">
+            <label>
+              Full name
+              <input type="text" name="fullName" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="registerEmail" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="registerPassword" placeholder="Create a password" required />
+            </label>
+            <button class="button button--primary" type="submit">Register</button>
+            <button class="button button--secondary" type="button" data-action="google-sign-in">Continue with Google</button>
+          </form>
+          <p class="auth-status" data-status></p>
+
+          <p class="auth-note-text">Already have an account? <a href="login.html">Login here</a>.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="assets/js/auth.js"></script>
+  </body>
+</html>

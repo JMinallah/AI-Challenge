@@ -1,7 +1,7 @@
-AI Learning Project Plan (Supabase-First)
+Stepsy Project Plan (Supabase-First)
 
 Project Goal
-- Build a practical web app for Dad to learn AI skills through daily guided practice.
+- Build a practical web app for people to learn AI skills through daily guided practice.
 - Make it ready for multiple users from day one in case friends join.
 - Use Supabase backend now (auth + progress data), then build frontend next.
 - Keep deployment simple: static frontend + Supabase cloud backend.
@@ -409,10 +409,10 @@ Honest Scope Control
 Deployment Plan
 - Deploy static frontend once auth works locally.
 - Set production Site URL and Redirect URLs in Supabase.
-- Share link with Dad; if he invites friends, each user gets separate account and progress.
+- Share the link with anyone; if friends join later, each user gets a separate account and progress.
 
 Success Metrics
 - Authentication works for email/password and Google.
 - Users only access their own progress/reflections.
-- At least 5 of 7 week 1 lessons completed by Dad.
+- At least 5 of 7 week 1 lessons completed by the primary user.
 - App remains usable on mobile and desktop.

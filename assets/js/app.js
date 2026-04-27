@@ -6,4 +6,4 @@ if (signInLink) {
 	});
 }
 
-console.log('AI Learning App loaded');
+console.log('Stepsy loaded');

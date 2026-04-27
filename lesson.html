@@ -3,16 +3,115 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Learning App - Lesson</title>
+    <title>Stepsy - Lesson</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <section class="card">
-        <h1>Lesson</h1>
-        <p>Single lesson details will render here.</p>
-      </section>
-    </main>
-    <script type="module" src="assets/js/router.js"></script>
+    <div class="page-shell">
+      <header class="site-nav">
+        <a class="brand" href="index.html">Stepsy</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="lessons.html">Lessons</a>
+          <a href="progress.html">Progress</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </header>
+
+      <main class="site-main site-main--app lesson-layout">
+        <section class="lesson-main">
+          <div class="lesson-header">
+            <p class="eyebrow" id="lessonArea">Loading...</p>
+            <h1 id="lessonTitle">Loading lesson...</h1>
+            <p class="section-copy" id="lessonObjective">Preparing lesson details...</p>
+          </div>
+
+          <div class="lesson-tabs-container">
+            <div class="sidebar-nav">
+              <nav class="lesson-tabs" aria-label="Lesson sections">
+                <button class="tab-btn active" data-tab="learn">Learn</button>
+                <button class="tab-btn" data-tab="practice">Practice</button>
+                <button class="tab-btn" data-tab="reflect">Reflect</button>
+              </nav>
+
+              <div class="lesson-side desktop-only" style="margin-top: 32px;">
+                <div class="content-block" style="padding: 20px;">
+                  <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 12px;">Quick actions</h2>
+                  <div class="stack" style="display: grid; gap: 10px;">
+                    <a class="button button--secondary" href="lessons.html">Back to lessons</a>
+                    <a class="button button--secondary" href="progress.html">View progress</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-tab-content">
+              <!-- Learn Tab -->
+              <div class="tab-pane active" id="tab-learn">
+                <div class="content-block">
+                  <h2>Concept</h2>
+                  <p id="lessonConcept">-</p>
+                </div>
+                <div class="content-block">
+                  <h2>Tool setup</h2>
+                  <p class="lesson-meta" id="lessonTool"><strong>Tool:</strong> -</p>
+                  <p class="lesson-meta" id="lessonToolQuickStart" style="margin-top: 8px;">-</p>
+                </div>
+
+                <!-- Hardcoded Custom Resources block (hidden by default) -->
+                <div class="content-block" id="customResourcesBlock" hidden>
+                  <h2>Additional Resources</h2>
+                  <div id="customResourcesContent"></div>
+                </div>
+
+                <div class="hero-actions">
+                  <button class="button button--primary next-tab-btn" data-target="practice">Next</button>
+                </div>
+              </div>
+
+              <!-- Practice Tab -->
+              <div class="tab-pane" id="tab-practice" hidden>
+                <div class="content-block">
+                  <h2>Prompt of the day</h2>
+                  <p id="lessonPrompt">-</p>
+                </div>
+                <div class="content-block">
+                  <h2>Practice Task</h2>
+                  <p id="lessonPracticeTask">-</p>
+                </div>
+                <div class="content-block">
+                  <h2>Tips and tricks</h2>
+                  <ul class="feature-list" id="lessonTips"></ul>
+                </div>
+                <div class="hero-actions">
+                  <button class="button button--primary next-tab-btn" data-target="reflect">Next</button>
+                </div>
+              </div>
+
+              <!-- Reflect Tab -->
+              <div class="tab-pane" id="tab-reflect" hidden>
+                <div class="content-block">
+                  <h2>Reliability Checks</h2>
+                  <ul class="feature-list" id="lessonReliabilityChecks"></ul>
+                </div>
+                <div class="content-block">
+                  <h2>Reflection</h2>
+                  <div id="lessonReflectionPrompts" style="margin-bottom: 14px;"></div>
+                  <label>
+                    Your notes:
+                    <textarea class="input-area" id="reflectionInput" rows="5" placeholder="Write your reflection here..."></textarea>
+                  </label>
+                  <div class="hero-actions hero-actions--left">
+                    <button class="button button--primary" type="button" id="markCompleteBtn">Mark as Complete</button>
+                    <button class="button button--secondary" type="button" id="saveReflectionBtn">Save Notes</button>
+                  </div>
+                  <p class="auth-status" id="lessonState"> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="assets/js/lesson.js"></script>
   </body>
 </html>

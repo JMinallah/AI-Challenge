@@ -3,16 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Learning App - Progress</title>
+    <title>Stepsy - Progress</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <section class="card">
-        <h1>Progress</h1>
-        <p>Progress overview will be added here.</p>
-      </section>
-    </main>
+    <div class="page-shell">
+      <header class="site-nav">
+        <a class="brand" href="index.html">Stepsy</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="lessons.html">Lessons</a>
+          <a href="progress.html" aria-current="page">Progress</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </header>
+
+      <main class="site-main site-main--app">
+        <section class="page-intro">
+          <p class="eyebrow">Progress</p>
+          <h1>Your learning overview</h1>
+          <p class="section-copy">Track completion, streaks, and lesson outcomes across each week.</p>
+        </section>
+
+        <section class="metric-grid" aria-label="Progress metrics">
+          <article class="metric-box">
+            <p>Total complete</p>
+            <strong id="progressTotal">0 / 0</strong>
+          </article>
+          <article class="metric-box">
+            <p>Current streak</p>
+            <strong id="progressStreak">0 days</strong>
+          </article>
+          <article class="metric-box">
+            <p>Longest streak</p>
+            <strong id="progressLongest">0 days</strong>
+          </article>
+        </section>
+
+        <section class="list-shell" id="weeklyProgressList">
+          <p class="auth-status" id="progressState">Loading progress...</p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="assets/js/progress.js"></script>
   </body>
 </html>
