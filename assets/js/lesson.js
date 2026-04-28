@@ -85,22 +85,21 @@ async function initLessonPage() {
 	const customResourcesContent = document.querySelector('#customResourcesContent');
 	
 	if (customResourcesBlock && customResourcesContent) {
-		// Example: Inject custom HTML only for Day 1
-		if (lesson.day === 1) {
+		// Example: Inject custom HTML only for Week 1 Day 1
+		if (lesson.week === 1 && lesson.day === 1) {
 			customResourcesBlock.hidden = false;
 			customResourcesContent.innerHTML = `
-				<ul class="feature-list">
-					<li><a href="https://example.com" target="_blank">Intro to AI Concepts (PDF Guide)</a></li>
-					<li><a href="https://youtube.com" target="_blank">Watch: Getting started with ChatGPT</a></li>
-				</ul>
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/7u_G0dPsLHU?si=_Yc5TZYdT3KakxKx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
 			`;
 		} 
 		// Example: Custom HTML for Day 2
-		else if (lesson.day === 2) {
+		else if (lesson.week === 1 && lesson.day === 2) {
 			customResourcesBlock.hidden = false;
 			customResourcesContent.innerHTML = `
 				<ul class="feature-list">
-					<li><a href="#" target="_blank">Advanced Prompting Cheatsheet</a></li>
+					<li><a href="https://www.promptingguide.ai/techniques" target="_blank">Advanced Prompting Techniques Guide</a></li>
 				</ul>
 			`;
 		} 

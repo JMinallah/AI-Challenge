@@ -95,6 +95,24 @@ if (googleButton) {
 	googleButton.addEventListener('click', handleGoogleSignIn);
 }
 
+// Password visibility toggle logic
+const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+togglePasswordBtns.forEach(btn => {
+	btn.addEventListener('click', () => {
+		const wrapper = btn.closest('.password-wrapper');
+		const input = wrapper.querySelector('input');
+		const slash = btn.querySelector('.slash');
+		
+		if (input.type === 'password') {
+			input.type = 'text';
+			slash.style.opacity = '1';
+		} else {
+			input.type = 'password';
+			slash.style.opacity = '0';
+		}
+	});
+});
+
 redirectIfAlreadyLoggedIn();
 
 console.log('Auth module loaded');

@@ -28,7 +28,16 @@
             </label>
             <label>
               Password
-              <input type="password" name="password" placeholder="••••••••" required />
+              <div class="password-wrapper">
+                <input type="password" name="password" placeholder="••••••••" required />
+                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                    <path class="eye" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle class="pupil" cx="12" cy="12" r="3"></circle>
+                    <path class="slash" d="M2.5 2.5l19 19" stroke-width="2" style="opacity: 0;"></path>
+                  </svg>
+                </button>
+              </div>
             </label>
             <button class="button button--primary" type="submit">Login</button>
             <button class="button button--secondary" type="button" data-action="google-sign-in">Continue with Google</button>
